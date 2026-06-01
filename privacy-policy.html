@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Orza</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f0f13;
+      color: #e2e2e8;
+      padding: 24px;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 0 80px;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+    .logo span { color: #7c6af7; }
+    .tagline {
+      font-size: 14px;
+      color: #6b6b80;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .updated {
+      font-size: 13px;
+      color: #6b6b80;
+      margin-bottom: 36px;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 36px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 15px;
+      color: #9a9ab0;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    ul li, ol li {
+      font-size: 15px;
+      color: #9a9ab0;
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    th {
+      text-align: left;
+      padding: 10px 12px;
+      background: #1a1a24;
+      color: #c8c8d8;
+      font-weight: 600;
+      border: 1px solid #2a2a38;
+    }
+    td {
+      padding: 10px 12px;
+      color: #9a9ab0;
+      border: 1px solid #2a2a38;
+      vertical-align: top;
+    }
+    a {
+      color: #7c6af7;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    .divider {
+      border: none;
+      border-top: 1px solid #2a2a38;
+      margin: 36px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">orza<span>.</span></div>
+    <div class="tagline">Personal Budget Manager</div>
+
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: June 1, 2026</div>
+
+    <h2>1. Introduction</h2>
+    <p>
+      Orza ("we", "our", or "the app") is a personal budget manager developed by Tsukiyo Labs.
+      This Privacy Policy explains how we collect, use, and protect your information when you use Orza.
+    </p>
+
+    <h2>2. Data We Collect</h2>
+
+    <h2>2.1 Personal Information</h2>
+    <p>When you create an account, we collect:</p>
+    <ul>
+      <li><strong>Email address</strong> — used for authentication and account recovery. Managed by Supabase.</li>
+      <li><strong>Password</strong> — hashed, never stored in plain text.</li>
+    </ul>
+
+    <h2>2.2 Financial Data</h2>
+    <p>
+      All financial data you enter (accounts, budgets, transactions, categories) is
+      <strong>encrypted on your device using AES-256-GCM</strong> before being stored locally
+      or synced to our servers. We cannot read your financial data at any time.
+    </p>
+
+    <h2>2.3 Advertising Data</h2>
+    <p>
+      Orza displays ads via <strong>Google AdMob</strong> on the free tier. AdMob may collect:
+    </p>
+    <ul>
+      <li>Device identifiers</li>
+      <li>IP address</li>
+      <li>General location (country/region)</li>
+      <li>Ad interaction data (clicks, impressions)</li>
+    </ul>
+    <p>
+      This data is collected and processed by Google. See
+      <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> for details.
+      Users who upgrade to Orza Premium will no longer be served ads.
+    </p>
+
+    <h2>2.4 In-App Purchases</h2>
+    <p>
+      If you purchase Orza Premium, the transaction is processed entirely by
+      <strong>Google Play</strong>. We do not collect or store any payment information.
+      See <a href="https://play.google.com/about/play-terms/" target="_blank">Google Play's Terms of Service</a> for details.
+    </p>
+
+    <h2>3. How We Use Your Data</h2>
+    <table>
+      <tr>
+        <th>Data</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td>Email address</td>
+        <td>Authentication and account recovery</td>
+      </tr>
+      <tr>
+        <td>Encrypted financial data</td>
+        <td>Cloud backup and multi-device sync</td>
+      </tr>
+      <tr>
+        <td>Ad interaction data</td>
+        <td>Displaying relevant ads (free tier only)</td>
+      </tr>
+    </table>
+    <p>We do not sell, rent, or share your personal data with third parties beyond what is described in this policy.</p>
+
+    <h2>4. Data Storage and Security</h2>
+    <ul>
+      <li>Financial data is encrypted on-device before transmission using AES-256-GCM.</li>
+      <li>Your encryption key is derived from your password or biometric credentials and never leaves your device.</li>
+      <li>Encrypted data is stored on Supabase infrastructure hosted in the European Union.</li>
+      <li>We retain your data for as long as your account is active.</li>
+      <li>You may request deletion of your account and all data at any time (see Section 6).</li>
+    </ul>
+
+    <h2>5. Biometric Data</h2>
+    <p>
+      Orza may use your device's biometric authentication (fingerprint, face recognition) to unlock
+      the app. Biometric data is processed entirely by your device's operating system and is
+      never accessed or stored by Orza.
+    </p>
+
+    <h2>6. Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> your data at any time through the app</li>
+      <li><strong>Delete</strong> your account and all associated data via Settings → Delete account, or by contacting us</li>
+      <li><strong>Export</strong> your financial data through the app's export feature</li>
+      <li><strong>Opt out</strong> of personalised ads via your device's ad settings</li>
+    </ul>
+    <p>
+      For account deletion instructions, visit:
+      <a href="https://goncalos04.github.io/orza-verify/delete-account.html">orza-verify/delete-account</a>
+    </p>
+
+    <h2>7. Children's Privacy</h2>
+    <p>
+      Orza is not directed at children under the age of 13. We do not knowingly collect
+      personal information from children. If you believe a child has provided us with personal
+      information, please contact us so we can delete it.
+    </p>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. We will notify you of significant
+      changes through the app or via email. Continued use of the app after changes constitutes
+      acceptance of the updated policy.
+    </p>
+
+    <hr class="divider" />
+
+    <h2>9. Contact</h2>
+    <p>
+      If you have any questions about this Privacy Policy or wish to request data deletion, please contact us at:<br /><br />
+      <a href="mailto:tsukiyo.labs.orza@outlook.com">tsukiyo.labs.orza@outlook.com</a>
+    </p>
+  </div>
+</body>
+</html>

@@ -3,63 +3,311 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Orza – Personal Budget Manager</title>
+  <title>Orza – Your Finances, Under Your Control</title>
+  <meta name="description" content="Orza is a personal budget manager that keeps your financial data encrypted on your device. Track expenses, set budgets, and stay on top of your money — even offline." />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #0f0f13;
-      color: #e2e2e8;
-      min-height: 100vh;
+      color: #1a1a2e;
+      background: #fff;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 24px 0;
+      position: relative;
+      z-index: 2;
+    }
+    .nav img { width: 30px; height: 30px; }
+    .nav span {
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: linear-gradient(135deg, #5b62f4 0%, #6c7bf7 100%);
+      position: relative;
+    }
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 70px 24px 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      color: rgba(255,255,255,0.88);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .hero-wave {
+      display: block;
+      width: 100%;
+      height: 70px;
+      position: relative;
+      margin-top: -1px;
+    }
+    .hero-wave svg { display: block; width: 100%; height: 100%; }
+
+    /* ---------- Features (3 icons) ---------- */
+    .features {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 24px 90px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 48px;
+    }
+    .feature {
+      flex: 1 1 240px;
+      max-width: 280px;
+      text-align: center;
+    }
+    .feature .icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      color: #6c7bf7;
     }
-    .card {
-      background: #1a1a24;
-      border: 1px solid #2a2a38;
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 520px;
-      width: 100%;
+    .feature .icon svg { width: 26px; height: 26px; }
+    .feature h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 10px;
+    }
+    .feature p {
+      font-size: 14px;
+      color: #7a7a90;
+      line-height: 1.7;
+    }
+
+    /* ---------- Showcase sections ---------- */
+    .showcase {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: flex;
+      align-items: center;
+      gap: 64px;
+    }
+    .showcase.reverse { flex-direction: row-reverse; }
+    .showcase-media {
+      flex: 1 1 320px;
+      max-width: 320px;
+    }
+    .showcase-media .frame {
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px -20px rgba(91,98,244,0.35);
+    }
+    .showcase-text { flex: 1 1 360px; }
+    .showcase-text h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 14px;
+    }
+    .showcase-text p {
+      font-size: 15px;
+      color: #7a7a90;
+      line-height: 1.8;
+    }
+
+    /* ---------- CTA ---------- */
+    .cta {
+      background: #dbe9fb;
+      padding: 70px 24px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 12px;
+    }
+    .cta p {
+      font-size: 15px;
+      color: #55597a;
+      margin-bottom: 32px;
+    }
+    .cta .btn {
+      display: inline-block;
+      background: #14142b;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 16px 36px;
+      border-radius: 30px;
+    }
+    .cta .btn:hover { background: #26264a; }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: #dbe9fb;
+      padding: 0 24px 32px;
       text-align: center;
     }
-    .logo {
-      font-size: 36px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -1px;
+    footer .divider {
+      max-width: 1000px;
+      margin: 0 auto 20px;
+      border: none;
+      border-top: 1px solid rgba(26,26,46,0.12);
     }
-    .logo span { color: #7c6af7; }
-    p {
-      font-size: 16px;
-      color: #9a9ab0;
-      margin-top: 12px;
-      line-height: 1.6;
+    footer p {
+      font-size: 13px;
+      color: #55597a;
+      margin-bottom: 6px;
     }
-    .links {
-      margin-top: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    footer a {
+      text-decoration: underline;
+      color: #55597a;
     }
-    .links a {
-      color: #7c6af7;
-      text-decoration: none;
-      font-size: 15px;
+    footer .links a { margin: 0 6px; }
+
+    @media (max-width: 720px) {
+      .hero h1 { font-size: 30px; }
+      .showcase, .showcase.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+      }
+      .showcase-media, .showcase-text {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+      .showcase-text h2 { font-size: 22px; }
     }
-    .links a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="logo">orza<span>.</span></div>
-    <p>Personal budget manager with end-to-end encryption.</p>
-    <div class="links">
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="delete-account.html">Delete Account</a>
+
+  <div class="hero">
+    <nav class="nav">
+      <img src="assets/icon/app_icon.png" alt="Orza logo" />
+      <span>ORZA</span>
+    </nav>
+    <div class="hero-inner">
+      <h1>Your Finances, Under Your Control</h1>
+      <p>
+        Orza is a personal budget manager built around one principle: your financial data belongs
+        to you. Track expenses, set budgets, and stay on top of your money, all encrypted on your
+        device, synced across your devices, and available even when you're offline.
+      </p>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" fill="#ffffff"></path>
+      </svg>
     </div>
   </div>
+
+  <section class="features">
+    <div class="feature">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <circle cx="12" cy="12" r="9"></circle>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </div>
+      <h3>Built for real budgets</h3>
+      <p>Orza keeps things simple: accounts, categories, budgets, and transactions. Just open the app, add your data, and get a clear picture of your finances.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="15" r="4"></circle>
+          <path d="M11 12 L20 3 M17 6 L20 9 M14 9 L16.5 11.5"></path>
+        </svg>
+      </div>
+      <h3>Privacy by design, not by policy</h3>
+      <p>Orza doesn't have access to your data because it was never designed to. Only you can see your financial data, not even Orza can.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 15 L15 9"></path>
+          <path d="M8 6 h-1 a5 5 0 0 0 0 10 h1"></path>
+          <path d="M16 6 h1 a5 5 0 0 1 0 10 h-1"></path>
+        </svg>
+      </div>
+      <h3>Works Offline, Syncs Automatically</h3>
+      <p>Orza is offline-first. Add transactions without a connection and let Orza sync everything silently in the background when you're back online.</p>
+    </div>
+  </section>
+
+  <section class="showcase">
+    <div class="showcase-media">
+      <div class="frame"><img src="assets/screenshots/home.png" alt="Orza home screen showing total balance, income, expenses and accounts" /></div>
+    </div>
+    <div class="showcase-text">
+      <h2>See your full picture, instantly</h2>
+      <p>The Orza home screen gives you a real-time overview of your balances, recent transactions, and budget health. Everything you need to know about your money, right when you open the app.</p>
+    </div>
+  </section>
+
+  <section class="showcase reverse">
+    <div class="showcase-media">
+      <div class="frame"><img src="assets/screenshots/transactions.png" alt="Orza transactions screen listing recent income and expenses" /></div>
+    </div>
+    <div class="showcase-text">
+      <h2>Every expense, perfectly organised</h2>
+      <p>Log transactions in seconds and find anything instantly. Orza keeps your full history sorted by date, filtered by account or category. Always encrypted, always yours.</p>
+    </div>
+  </section>
+
+  <section class="showcase">
+    <div class="showcase-media">
+      <div class="frame"><img src="assets/screenshots/budgets.png" alt="Orza budgets screen showing planned, spent and remaining amounts per category" /></div>
+    </div>
+    <div class="showcase-text">
+      <h2>Set limits. Stay on track.</h2>
+      <p>Create budgets for any category and Orza will track your progress automatically. You'll always know how much you have left to spend before the month is over.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Download Orza for Free</h2>
+    <p>Ready to finally understand your money? Download free on Android.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=tsukiyo.labs.orza" target="_blank" rel="noopener">GOOGLE PLAY</a>
+  </section>
+
+  <footer>
+    <hr class="divider" />
+    <p>&copy; 2026 Orza. All rights reserved.</p>
+    <p class="links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      &bull;
+      <a href="delete-account.html">Delete Account</a>
+    </p>
+  </footer>
+
 </body>
 </html>
